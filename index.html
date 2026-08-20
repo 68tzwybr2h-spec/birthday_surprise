@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Birthday ❤️</title>
+  <title>For You ❤️</title>
+
   <style>
     body {
       margin: 0;
@@ -17,33 +18,45 @@
 
     .box {
       background: white;
-      padding: 50px 30px;
+      padding: 45px 30px;
       border-radius: 25px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      max-width: 500px;
+      width: 420px;
+      max-width: 80%;
     }
 
     h1 {
-      font-size: 42px;
+      font-size: 35px;
     }
 
     p {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.6;
+    }
+
+    input {
+      padding: 14px;
+      width: 80%;
+      border: 2px solid #e75480;
+      border-radius: 25px;
+      font-size: 16px;
+      text-align: center;
+      margin: 15px 0;
     }
 
     button {
       background: #e75480;
       color: white;
       border: none;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-size: 18px;
+      padding: 14px 30px;
+      border-radius: 25px;
+      font-size: 17px;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #c93d68;
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -51,20 +64,37 @@
 <body>
 
   <div class="box">
-    <h1>Happy Birthday, My Love ❤️</h1>
+    <h1>🔐 A Little Secret</h1>
 
     <p>
-      Today is a very special day because it's the day you were born. 🎂
+      This website is only for one special person... ❤️
     </p>
 
     <p>
-      I made something special just for you... 💌
+      Enter the secret password to continue 💌
     </p>
 
-    <button onclick="alert('This is only the beginning... ❤️')">
-      Click me 💕
-    </button>
+    <input type="password" id="password" placeholder="Enter password">
+
+    <br>
+
+    <button onclick="checkPassword()">Open ❤️</button>
+
+    <div id="message"></div>
   </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+
+      if (password === "1234") {
+        window.location.href = "birthday.html";
+      } else {
+        document.getElementById("message").innerHTML =
+          "Wrong password 😏 Try again ❤️";
+      }
+    }
+  </script>
 
 </body>
 </html>
